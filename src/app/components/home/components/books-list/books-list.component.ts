@@ -20,7 +20,6 @@ export class BooksListComponent implements OnInit {
     this.bookService.getAllBooks()
     .subscribe(books => {
       this.books = books;
-      console.log(this.books);
     });
 }
 

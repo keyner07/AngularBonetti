@@ -8,12 +8,12 @@ const TTS = require('./text-to-speech');
 
 exports.UploadFile = async function(req, res, next) {
     const googleCloudStorage = new Storage({
-      projectId: process.env.GCLOUD_PROJECT,
+      projectId: path.join(__dirname,process.env.GCLOUD_PROJECT),
       keyFilename: process.env.GCS_KEYFILE
     });
     let reqFileName = req.file.originalname;
     let extension = path.extname(reqFileName);
-    
+
     // Aqui nos localizamos en el bucket que queremos subir el archivo.
     const bucket = googleCloudStorage.bucket(process.env.GCS_BUCKET);
     let fileName = `${moment().unix()}${extension}`;
@@ -29,18 +29,19 @@ exports.UploadFile = async function(req, res, next) {
 
       // Esto se dispara cuando ocurre un error.
       blobStream.on("error", err => {
+        console.log(err);
         next();
       });
 
       // Esto se dispara cuando lo de escribir el archivo termina.
       blobStream.on("finish", () => {
         const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-          
+
         // Aqui guardamos el url.
           req.body.publicUrlTxt = publicUrl;
           next();
         });
-      
+
       // Aqui se le pasa lo que escribira en el archivo del bucket.
       blobStream.end(req.file.buffer);
 }

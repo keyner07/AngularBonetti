@@ -2,8 +2,10 @@
   "name": "angular-bonetti",
   "version": "0.0.0",
   "scripts": {
+    "pre-install": "node createCRED.js",
+    "dev": "nodemon ./backend/server.js",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
