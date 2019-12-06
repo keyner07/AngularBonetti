@@ -1,5 +1,5 @@
 const userCTRL = require('./userRepository');
-const User = require('./User').User;
+const User = require('./user').User;
 const services = require('../../auth/services');
 const encryption = require('../../auth/encryption');
 

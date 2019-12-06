@@ -43,7 +43,6 @@ export class UserSignUpComponent implements OnInit {
     if( data.message === 'Correct') {
       this.router.navigate(['book-list']);
     }
-    alert('Email o contrase;a incorrecta');
   }
 
 }
