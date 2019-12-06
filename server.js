@@ -30,8 +30,8 @@ app.use(cors());
 //     next();
 // });
 
-
+const port = process.env.PORT || 8080;
 // Aqui le decimos a NodeJS en que puerto escuchara.
-app.listen(process.env.PORT, ()=>{
+app.listen(port, ()=>{
     console.log(`Server running on http://localhost:${process.env.PORT}`);
 })
