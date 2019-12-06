@@ -4,6 +4,7 @@ const expressCache = require('express-cache-controller');
 const cors = require('cors');
 const router = require('./backend/routes/routes');
 const path = require('path');
+require('dotenv').config();
 const db = require('./backend/database/db');
 
 // Inicializacion de express
