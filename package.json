@@ -1,10 +1,13 @@
 {
   "name": "angular-bonetti",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.16.3"
+  },
   "scripts": {
     "heroku-prebuild": "node createCRED.js",
-    "ng": "ng",
     "start": "node server.js",
+    "ng": "ng",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
