@@ -4,6 +4,7 @@ const expressCache = require('express-cache-controller');
 require('dotenv').config();
 const cors = require('cors');
 const router = require('./routes/routes');
+const router1 = require('./backend/')
 const db = require('./database/db');
 // const middleware = require('./middlewares/middleware');
 
