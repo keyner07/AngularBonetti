@@ -4,6 +4,7 @@ const expressCache = require('express-cache-controller');
 const cors = require('cors');
 const router = require('./backend/routes/routes');
 const path = require('path');
+require('dotenv').config();
 const db = require('./backend/database/db');
 
 // Inicializacion de express
@@ -30,7 +31,7 @@ app.use(cors());
 //     next();
 // });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 // Aqui le decimos a NodeJS en que puerto escuchara.
 app.listen(port, ()=>{
     console.log(`Server running on http://localhost:${process.env.PORT}`);

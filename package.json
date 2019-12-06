@@ -5,8 +5,8 @@
     "node": "10.16.3"
   },
   "scripts": {
-    "heroku-prebuild": "node createCRED.js",
     "start": "node server.js",
+    "heroku-prebuild": "node createCRED.js",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
