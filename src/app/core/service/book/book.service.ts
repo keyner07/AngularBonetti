@@ -16,7 +16,7 @@ export class BookService {
 
 
 
-  baseUri: string = 'http://localhost:3000/api/user';
+  baseUri: string = '/api/user';
   header = new HttpHeaders({
     'Access-Control-Allow-Origin' : 'http://localhost:3000',
     'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
