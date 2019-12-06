@@ -1,0 +1,16 @@
+<header class="header">
+<div class="container">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="row between-xs middle-xs header-row">
+      <nav class="navegacion">
+       <a mat-button routerLinkActive="active" routerLink="/book-list">Lista de libros</a>
+       <a mat-button routerLinkActive="active" routerLink="/create-book">Crear Libro</a>
+      </nav>
+       <a mat-button routerLinkActive="active" (click)="logout()">Log Out</a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+</div>
+</header>
+

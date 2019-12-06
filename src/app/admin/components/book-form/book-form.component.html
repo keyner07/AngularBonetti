@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="container">
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()" >
+  <mat-card class="shipping-card" class="create-box">
+    <mat-card-header>
+      <mat-card-title>Creacion de libros</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Title" formControlName="title">
+            <mat-error *ngIf="addressForm.controls['title'].hasError('required')">
+             Title is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Author" formControlName="author">
+            <mat-error *ngIf="addressForm.controls['author'].hasError('required')">
+              Author is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col">
+    <mat-form-field>
+      <ngx-mat-file-input formControlName="file" placeholder="Archivo txt" valuePlaceholder="Solo archivo txt" required [accept]="'.txt'" (change)="onChange($event)" ></ngx-mat-file-input>
+      <mat-icon matSuffix>folder</mat-icon>
+      <mat-error *ngIf="addressForm.get('file').hasError('required')">
+        Please select a file
+      </mat-error>
+      <mat-error *ngIf="addressForm.get('file').hasError('maxContentSize')">
+        The total size must not exceed {{addressForm.get('file')?.getError('maxContentSize').maxSize | byteFormat}} ({{addressForm.get('file')?.getError('maxContentSize').actualSize
+        | byteFormat}}).
+      </mat-error>
+    </mat-form-field>
+    </div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" class="submit" >Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,19 @@
+<div class="login-box">
+  <img class="avatar" src="https://storage.googleapis.com/web_elibrary/icons8_book_2.ico" alt="Logo">
+  <h1> Login Here</h1>
+  <form class="" (ngSubmit) = "onSubmit()"  >
+       <!-- Username -->
+    <label for="username" >Email</label>
+    <input type="text" placeholder="Enter Username" name="email" [(ngModel)]="usuario.email" required>
+
+    <!-- PASSWORD -->
+    <label for="password" >Password</label>
+    <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="usuario.password" required>
+
+    <input  type="submit" value="Log In">
+
+    <!-- <a href="a">Lost your password</a><br> -->
+    <router-outlet></router-outlet>
+    <a routerLink="/sign-Up" >Don't have an account?</a>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let tile of books"
+      [colspan]="2"
+      [rowspan]="1">
+    Klk
+  </mat-grid-tile>
+</mat-grid-list> -->
+  <section class="event-list">
+    <div class="container">
+      <article class="event" *ngFor="let book of books">
+        <div class="event-details">
+          <h6 class="event-title">{{ book.title | uppercase }}</h6>
+          <h6 class="event-description">{{ book.author | titlecase }}</h6>
+          <a class="event-url" [routerLink]="[ book._id ]">Ver libro</a>
+        </div>
+      </article>
+    </div>
+  </section>

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+<mat-card class="example-card" class="book-details" >
+  <mat-card-header>
+    <mat-card-title class="title">Titulo: {{ books.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle class="author">Autor: {{ books.author | titlecase}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://storage.googleapis.com/web_elibrary/books.jpg" alt="Photo of a book">
+  <mat-card-actions>
+    <a mat-button class="button" [routerLink]="['edit']" >Editar</a>
+    <a mat-button href="{{books.urlTxt}}" target="_blank" class="button">Leer libro</a>
+    <a mat-button href="{{books.urlMp3}}" target="_blank" class="button">Escuchar libro</a>
+    <button mat-button class="button" (clicked)="eliminateBook()" >Eliminar libro</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+<app-footer></app-footer>

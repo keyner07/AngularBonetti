@@ -1,0 +1,24 @@
+<div class="register-box">
+  <img class="avatar" src="https://storage.googleapis.com/web_elibrary/icons8_book_2.ico" alt="Logo">
+  <h1> Register now </h1>
+  <form  class="" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <label for="username">Nombre</label>
+    <input type="text"  name="name" [(ngModel)]="usuario.name"  placeholder="Enter name">
+
+    <!-- EMAIL -->
+    <label for="username">Email</label>
+    <input type="text" name="email" [(ngModel)]="usuario.email" placeholder="Enter email">
+
+    <!-- PASSWORD -->
+    <label for="password">Password</label>
+    <input type="password" name="password" [(ngModel)]="usuario.password" placeholder="Enter Password">
+
+    <input type="submit" value="Register">
+
+    <!-- <a href="a">Lost your password</a><br>
+    <a href="a">Don't have an account?</a> -->
+    <a routerLink="/sign-In" >Si ya tienes cuenta dale aqui</a>
+    <router-outlet></router-outlet>
+  </form>
+</div>

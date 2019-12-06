@@ -1,0 +1,35 @@
+<app-header></app-header>
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()" >
+    <mat-card class="shipping-card" class="create-box">
+      <mat-card-header>
+        <mat-card-title>Editar libro</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Title" formControlName="title">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Author" formControlName="author">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" *ngIf="hasUnitNumber">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <!-- <textarea matInput placeholder="Address 2" formControlName="address2"></textarea> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" class="submit" (clicked)="onSubmit()" >Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  <app-footer></app-footer>
