@@ -5,12 +5,14 @@ require('dotenv').config();
 const cors = require('cors');
 const router = require('./backend/routes/routes');
 const db = require('./backend/database/db');
-// const middleware = require('./middlewares/middleware');
 
-// const user = require('./routes/userRoutes');
-
-
+// Inicializacion de express
 const app = express();
+
+// Creando un link al build de angular
+const distDir = path.join(__dirname, '/dist/');
+app.use(express.static(distDir));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressCache());
