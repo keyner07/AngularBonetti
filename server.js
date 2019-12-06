@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const expressCache = require('express-cache-controller');
 const cors = require('cors');
 const router = require('./backend/routes/routes');
+const path = require('path');
 const db = require('./backend/database/db');
 
 // Inicializacion de express
