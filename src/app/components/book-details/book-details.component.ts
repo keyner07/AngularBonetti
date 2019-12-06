@@ -17,8 +17,7 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private bookService: BookService,
-    private router: Router
+    private bookService: BookService
   ) { }
 
   ngOnInit() {
@@ -37,7 +36,6 @@ export class BookDetailsComponent implements OnInit {
   }
 
   eliminateBook() {
-    console.log('entro')
     this.bookService.deleteBook(this.id)
     .subscribe(data => {
       alert(`Eliminado correctamente`);

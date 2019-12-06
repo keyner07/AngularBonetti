@@ -2,14 +2,14 @@
   "name": "angular-bonetti",
   "version": "0.0.0",
   "scripts": {
-    "pre-install": "node createCRED.js",
-    "dev": "nodemon ./backend/server.js",
+    "heroku-prebuild": "node createCRED.js",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
